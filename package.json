@@ -8,7 +8,8 @@
     "precommit": "lint-staged",
     "prettier-write": "yarn run prettier --write",
     "test": "node_modules/.bin/mocha",
-    "test:usage": "yarn build && mocha --compilers js:@babel/register usage-tests"
+    "test:usage": "yarn build && mocha --compilers js:@babel/register usage-tests",
+    "watch": "nodemon --exec 'babel src --out-dir lib' --ignore 'lib/*'"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
@@ -98,7 +99,8 @@
     "@babel/types": "^7.0.0-beta.39"
   },
   "dependencies": {
-    "@babel/register": "^7.0.0-beta.39"
+    "@babel/register": "^7.0.0-beta.39",
+    "nodemon": "^1.15.0"
   },
   "prettier": {
     "singleQuote": false
